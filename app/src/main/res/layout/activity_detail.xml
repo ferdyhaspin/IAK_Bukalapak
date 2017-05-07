@@ -86,6 +86,7 @@
             </LinearLayout>
 
             <TextView
+                android:textColor="@color/colorAccent"
                 android:id="@+id/tvHarga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

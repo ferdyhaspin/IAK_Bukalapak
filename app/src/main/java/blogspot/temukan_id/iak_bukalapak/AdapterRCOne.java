@@ -57,6 +57,7 @@ public class AdapterRCOne extends RecyclerView.Adapter {
             public void onClick(View view) {
                 Intent i = new Intent(context,DetailActivity.class);
                 i.putExtra("nama",list_produk.get(position).getNama());
+                i.putExtra("img" , list_produk.get(position).getImg());
                 i.putExtra("ranting_rate",list_produk.get(position).getRating_rate());
                 i.putExtra("ranting_count",list_produk.get(position).getRating_count());
                 i.putExtra("harga","RP"+String.valueOf(list_produk.get(position).getHarga()));
