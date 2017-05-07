@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="blogspot.temukan_id.iak_bukalapak.ui.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/c_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <EditText
+            android:focusable="false"
+            android:id="@+id/etPencarian"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:drawableLeft="@drawable/ic_pencarian"
+            android:background="@drawable/bg_pencarian"
+            android:layout_width="200dp"
+            android:paddingLeft="8dp"
+            android:textColor="#aeaeae"
+            android:textColorHint="#aeaeae"
+            android:textSize="15sp"
+            android:hint="Cari barang..."
+            android:layout_height="30dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="@color/abuabu500"
+            android:textStyle="bold"
+            android:text="@string/lihatsemua"
+            android:layout_centerVertical="true"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:textColor="@color/colorAccent"
+            android:text="LIHAT SEMUA"
+            android:textSize="10sp"
+            android:background="@drawable/bg_button_lihat_semua"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

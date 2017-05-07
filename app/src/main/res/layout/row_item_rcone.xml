@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_margin="5dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/container"
+        android:layout_width="150dp"
+        android:layout_height="270dp"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvJudul"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Judul"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:textColor="@color/abuabu400"
+                android:textSize="12sp"
+                android:id="@+id/tvSeller"
+                android:singleLine="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="seller" />
+
+            <TextView
+                android:textColor="@color/abuabu400"
+                android:singleLine="true"
+                android:textSize="12sp"
+                android:id="@+id/tvFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="feedback" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/tvHarga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="harga" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RatingBar
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/rtbProductRating"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:numStars="5"
+                    android:rating="2.4"
+                    android:isIndicator="false"
+                    style="@style/foodRatingBar"
+                    />
+                <TextView
+                    android:textColor="@color/abuabu500"
+                    android:textSize="10sp"
+                    android:id="@+id/tvCount"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>
