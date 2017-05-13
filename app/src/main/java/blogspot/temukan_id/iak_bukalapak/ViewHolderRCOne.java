@@ -21,7 +21,7 @@ public class ViewHolderRCOne extends RecyclerView.ViewHolder{
     public ViewHolderRCOne(View itemView) {
         super(itemView);
 
-        tvJudul = (TextView) itemView.findViewById(R.id.tvJudul);
+        tvJudul  = (TextView) itemView.findViewById(R.id.tvJudul);
         tvSeller = (TextView) itemView.findViewById(R.id.tvSeller);
         tvFeedback = (TextView) itemView.findViewById(R.id.tvFeedback);
         tvHarga = (TextView) itemView.findViewById(R.id.tvHarga);

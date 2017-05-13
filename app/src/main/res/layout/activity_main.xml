@@ -47,6 +47,7 @@
             android:layout_width="240dp"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/btnAll"
             android:textColor="@color/colorAccent"
             android:text="LIHAT SEMUA"
             android:textSize="10sp"

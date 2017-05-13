@@ -16,30 +16,6 @@ public class Model_Produk{
     private long rating_count;
     private String img;
 
-    public String getRating_rate() {
-        return rating_rate;
-    }
-
-    public void setRating_rate(String rating_rate) {
-        this.rating_rate = rating_rate;
-    }
-
-    public long getRating_count() {
-        return rating_count;
-    }
-
-    public void setRating_count(long rating_count) {
-        this.rating_count = rating_count;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
-
     public int getId() {
         return id;
     }
@@ -78,5 +54,29 @@ public class Model_Produk{
 
     public void setFeedback(String feedback) {
         this.feedback = feedback;
+    }
+
+    public String getRating_rate() {
+        return rating_rate;
+    }
+
+    public void setRating_rate(String rating_rate) {
+        this.rating_rate = rating_rate;
+    }
+
+    public long getRating_count() {
+        return rating_count;
+    }
+
+    public void setRating_count(long rating_count) {
+        this.rating_count = rating_count;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 }

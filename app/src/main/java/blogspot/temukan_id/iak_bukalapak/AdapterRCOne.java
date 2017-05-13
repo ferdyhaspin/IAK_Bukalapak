@@ -60,7 +60,7 @@ public class AdapterRCOne extends RecyclerView.Adapter {
                 i.putExtra("img" , list_produk.get(position).getImg());
                 i.putExtra("ranting_rate",list_produk.get(position).getRating_rate());
                 i.putExtra("ranting_count",list_produk.get(position).getRating_count());
-                i.putExtra("harga","RP"+String.valueOf(list_produk.get(position).getHarga()));
+                i.putExtra("harga","RP"+list_produk.get(position).getHarga());
                 context.startActivity(i);
             }
         });

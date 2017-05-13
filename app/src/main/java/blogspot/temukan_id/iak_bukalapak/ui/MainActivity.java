@@ -7,14 +7,17 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.Toast;
-import blogspot.temukan_id.iak_bukalapak.KerjakanBackgroundTask;
+
+import blogspot.temukan_id.iak_bukalapak.GetDataAsynctack;
 import blogspot.temukan_id.iak_bukalapak.R;
 
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private RecyclerView recyclerView;
+    private Button btnAll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
 
-        //asynctack mengambil data produk
-        KerjakanBackgroundTask x = new KerjakanBackgroundTask(this,recyclerView);
-        x.execute();
+        new GetDataAsynctack(this,recyclerView).execute();
+        // button
+        btnAll = (Button) findViewById(R.id.btnAll);
     }
 
     @Override
@@ -50,4 +53,8 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }
+
+    //asynctack mengambil data produk
+    /*KerjakanBackgroundTask x = new KerjakanBackgroundTask(this,recyclerView);
+    x.execute();*/
 }

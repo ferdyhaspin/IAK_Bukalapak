@@ -26,14 +26,14 @@ import okhttp3.Response;
  * Created by gm on 05/05/17.
  */
 
-public class KerjakanBackgroundTask extends AsyncTask<Void, Integer, String> {
+public class GetDataAsynctack extends AsyncTask<Void, Integer, String> {
 
     private Context context;
     private ProgressDialog dialog;
     private List<Model_Produk> list;
     private RecyclerView recyclerview;
 
-    public KerjakanBackgroundTask(Context context, RecyclerView recyclerview) {
+    public GetDataAsynctack(Context context, RecyclerView recyclerview) {
         this.context = context;
         this.recyclerview = recyclerview;
         list = new ArrayList<>();
@@ -41,7 +41,7 @@ public class KerjakanBackgroundTask extends AsyncTask<Void, Integer, String> {
 
     /**
      * Sebelum Proses
-     * */
+     */
     @Override
     protected void onPreExecute() {
         showProgress();
@@ -49,7 +49,7 @@ public class KerjakanBackgroundTask extends AsyncTask<Void, Integer, String> {
 
     /**
      * Proses
-     * */
+     */
     @Override
     protected String doInBackground(Void... voids) {
 
@@ -62,6 +62,7 @@ public class KerjakanBackgroundTask extends AsyncTask<Void, Integer, String> {
 
         Response response;
 
+
         try {
 
             response = okHttpClient.newCall(request).execute();
@@ -71,16 +72,17 @@ public class KerjakanBackgroundTask extends AsyncTask<Void, Integer, String> {
             e.printStackTrace();
         }
 
+
         return null;
     }
 
     /**
      * Selesai , Sesudah Proses
-     * */
+     */
     @Override
     protected void onPostExecute(String response) {
         hideProgress();
-        if(!(response == null)) {
+        if (!(response == null)) {
             try {
                 JSONObject jsonObject = new JSONObject(response);
 
@@ -100,13 +102,12 @@ public class KerjakanBackgroundTask extends AsyncTask<Void, Integer, String> {
 
                     // mengambil json array image produk
                     JSONArray objectImg = object.getJSONArray("images");
-                    /*for(int j = 0;  j < objectImg.length();j++){
-                        Log.e("image produk",objectImg.get(j).toString());
-                    }*/
+
                     x.setImg(objectImg.get(0).toString());
 
                     //mengambil ranting
                     JSONObject objectRanting = object.getJSONObject("rating");
+
                     x.setRating_rate(objectRanting.getString("average_rate"));
                     x.setRating_count(objectRanting.getLong("user_count"));
 
@@ -114,16 +115,17 @@ public class KerjakanBackgroundTask extends AsyncTask<Void, Integer, String> {
                     list.add(x);
                 }
 
-                recyclerview.setAdapter(new AdapterRCOne(context,list));
+                recyclerview.setAdapter(new AdapterRCOne(context, list));
 
             } catch (JSONException e) {
                 e.printStackTrace();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }else{
+        } else {
             Toast.makeText(context, "Response Null", Toast.LENGTH_SHORT).show();
         }
+
     }
 
     public void showProgress() {
